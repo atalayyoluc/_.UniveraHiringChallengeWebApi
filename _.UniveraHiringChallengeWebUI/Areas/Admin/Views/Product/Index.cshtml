@@ -1,0 +1,60 @@
+﻿@model List<ProductViewModel>
+
+<div class="card">
+    <h5 class="card-header">Ürünler</h5>
+    <div class="table-responsive text-nowrap m-2">
+
+
+       
+            <a asp-area="Admin" asp-controller="Product" asp-action="Add" class="btn btn-success mb-2">
+               Yeni Ürün Ekle<i class="bx bx-plus"></i>
+            </a>
+        
+
+
+
+        <table class="table table-bordered" id="articlesTable" width="100%" collspacing="0">
+            <thead>
+                <tr>
+                    <th>Ürün Adı</th>
+                    <th>Ürün Açıklaması</th>
+                    <th>Ürün Resmi</th>
+                   
+                        <th>İşlemler</th>
+                    
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Başlık</th>
+                    <th>Ürün Açıklaması</th>
+                    <th>Ürün Resmi</th>
+                   
+                        <th>İşlemler</th>
+                    
+                </tr>
+            </tfoot>
+            <tbody class="table-border-bottom-0">
+                @foreach (var item in Model)
+                {
+                    <tr name="@item.productId">
+                       
+                      <td>@item.productName</td>
+                      <td>@item.productDescription</td>
+                      <td>@item.productImgUrl</td>
+                            <td>
+                                <a class="btn btn-info btn-sm" data-id="@item.productId" asp-area="Admin" asp-controller="Product" asp-action="Update" asp-route-productId="@item.productId"><i class="bx bxs-edit"></i></a>
+                                <a class="btn btn-danger btn-sm" data-id="@item.productId" asp-area="Admin" asp-controller="Product" asp-action="Delete" asp-route-productId="@item.productId"><i class="bx bx-minus-circle"></i></a>
+                            </td>
+
+                        
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/js/productIndex.js"></script>
+          }

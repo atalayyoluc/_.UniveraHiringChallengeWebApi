@@ -1,0 +1,62 @@
+﻿@using _.UniveraHiringChallengeWebUI.Models;
+@model List<ListAllShoppingDTO>
+
+<div class="card">
+    <h5 class="card-header">Aktif Alışveriş Listeleri</h5>
+    <div class="table-responsive text-nowrap m-2">
+
+
+
+        <table class="table table-bordered" id="articlesTable" width="100%" collspacing="0">
+            <thead>
+                <tr>
+                    <th>Sepet Sahibi</th>
+                    <th>Sepet Adı</th>
+                    <th>Sepet Açıklaması</th>
+                    <th>Sepet Oluşturma Tarihi</th>
+                    <th>Tamamlanma Durumu/Tarihi</th>
+
+                    <th>İşlemler</th>
+
+                </tr>
+            </thead>
+            <tfoot>
+                 <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                   
+
+                    <th></th>
+
+                </tr>
+            </tfoot>
+            <tbody class="table-border-bottom-0">
+                @foreach (var item in Model)
+                {
+                    <tr name="@item.shoppingId">
+
+                        <td>@item.fullName</td> 
+                        <td>@item.shoppingName</td> 
+                        <td>@item.shoppingDescription</td> 
+                        <td>@item.shoppingDate.ToString("D")</td>
+                        <td>
+                            @(item.iscomplated ? @item.complatedDate.Value.ToLongDateString()+@item.complatedDate.Value.ToShortTimeString(): "Sipariş Henüz Tamamlanmamıştır.")
+                                                               
+                            <td>
+                            <a class="btn btn-info btn-sm" data-id="@item.shoppingId" asp-area="Admin" asp-controller="Category" asp-action="Update" asp-route-categoryId="@item.shoppingId">Sepet Detayları</a>
+
+                        </td>
+
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/js/productIndex.js"></script>
+          }

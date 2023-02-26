@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "_.UniveraHiringChallengeBusines": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:58764;http://localhost:58766"
+    }
+  }
+}

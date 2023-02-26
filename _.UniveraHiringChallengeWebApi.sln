@@ -5,11 +5,15 @@ VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_.UniveraHiringChallengeWebApi", "_.UniveraHiringChallengeWebApi\_.UniveraHiringChallengeWebApi.csproj", "{A7504680-617E-4FB5-B0A2-5AB729B94889}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_.UniveraHiringChallengeEntity", "_.UniveraHiringChallengeEntity\_.UniveraHiringChallengeEntity.csproj", "{6ECF53F6-8DBC-472A-A486-B64F2A77CEEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_.UniveraHiringChallengeEntity", "_.UniveraHiringChallengeEntity\_.UniveraHiringChallengeEntity.csproj", "{6ECF53F6-8DBC-472A-A486-B64F2A77CEEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_.UniveraHiringChallengeData", "_.UniveraHiringChallengeData\_.UniveraHiringChallengeData.csproj", "{F5300D63-BA7D-4FFD-AC77-F23CD7DFD4B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_.UniveraHiringChallengeData", "_.UniveraHiringChallengeData\_.UniveraHiringChallengeData.csproj", "{F5300D63-BA7D-4FFD-AC77-F23CD7DFD4B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_.UniveraHiringChallengeBusines", "Business\_.UniveraHiringChallengeBusines.csproj", "{B0DA8891-4684-4CD2-8AE4-33B993C0F0FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_.UniveraHiringChallengeBusines", "Business\_.UniveraHiringChallengeBusines.csproj", "{B0DA8891-4684-4CD2-8AE4-33B993C0F0FC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_.UniveraHiringChallengeWebUI", "_.UniveraHiringChallengeWebUI\_.UniveraHiringChallengeWebUI.csproj", "{AB64CE8F-2ACC-4E3B-A5D6-59F2BE2AE85A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_.UniveraHiringChallengeTest", "_.UniveraHiringChallengeTest\_.UniveraHiringChallengeTest.csproj", "{0F1E4A4F-0432-429F-AF48-2A7CA8337322}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{B0DA8891-4684-4CD2-8AE4-33B993C0F0FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0DA8891-4684-4CD2-8AE4-33B993C0F0FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0DA8891-4684-4CD2-8AE4-33B993C0F0FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB64CE8F-2ACC-4E3B-A5D6-59F2BE2AE85A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB64CE8F-2ACC-4E3B-A5D6-59F2BE2AE85A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB64CE8F-2ACC-4E3B-A5D6-59F2BE2AE85A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB64CE8F-2ACC-4E3B-A5D6-59F2BE2AE85A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F1E4A4F-0432-429F-AF48-2A7CA8337322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F1E4A4F-0432-429F-AF48-2A7CA8337322}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F1E4A4F-0432-429F-AF48-2A7CA8337322}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F1E4A4F-0432-429F-AF48-2A7CA8337322}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

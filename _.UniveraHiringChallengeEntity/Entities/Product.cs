@@ -10,12 +10,13 @@ namespace _.UniveraHiringChallengeEntity.Entities
     public class Product
     {
         [Key]
-        public Guid Id { get; set; } = Guid.NewGuid();
-        public int ProductName { get; set; }
+        public Guid ProductId { get; set; } = Guid.NewGuid();
+        public string ProductName { get; set; }
         public string ProductDescription { get; set; }
         public string ProductImgUrl { get; set; }
         public List<ProductCategory> ProductCategory { get; set; }
-        public List<ShoppingList> ShoppingLists { get; set; }
+        public List<ShoppingListProduct> ShoppingListProducts { get; set; }
+
 
     }
 }

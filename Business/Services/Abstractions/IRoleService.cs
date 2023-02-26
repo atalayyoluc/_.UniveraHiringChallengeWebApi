@@ -11,6 +11,6 @@ namespace _.UniveraHiringChallengeBusines.Services.Abstractions
     public interface IRoleService
     {
         Task<string> GetRoleByUser(User user);
-        Task AddRoleByUser(Guid userID);
+        Task<Guid> AddRoleByUser(Guid userID);
     }
 }

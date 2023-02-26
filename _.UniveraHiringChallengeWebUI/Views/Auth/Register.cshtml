@@ -1,0 +1,114 @@
+﻿
+@model RegisterViewModel
+@{
+    Layout = null;
+}
+
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Invent Signup Form Responsive Widget Template | Home :: W3layouts</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords"
+          content="Invent Signup Form Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta tag Keywords -->
+    <!--/Style-CSS -->
+    <link rel="stylesheet" href="~/web/css/style.css" type="text/css" media="all" />
+    <!--//Style-CSS -->
+</head>
+
+<body>
+    <!-- /login-section -->
+    <section class="w3l-login-6">
+        <div class="login-hny">
+            <div class="form-content">
+                <div class="form-right">
+                    <div class="overlay">
+                        <div class="grid-info-form">
+                            <h5>Traversal Rezervasyon</h5>
+                            <h3>Hesap Oluşturun </h3>
+                           <p>Bir Hesabınız var mı ?
+
+                            <a asp-action="Login" asp-controller="Auth" class="read-more-1 btn">Hadi başlayalım</a>
+                           </p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-left">
+                    <div class="middle">
+                        <h4>Bize Katılın</h4>
+                        <p>Hemen ücretsiz hesap oluşturun :)</p>
+                    </div>
+
+                    <form method="post" class="signin-form">
+                        <div class="form-input">
+                            <label>Adınız</label>
+                            <input type="text" asp-for="userFirstName" />
+             
+                        </div>
+                        <div class="form-input">
+                            <label>Soyadınız</label>
+                            <input type="text" asp-for="userLastName" />
+                         
+                        </div>
+                        <div class="form-input">
+                            <label>Kullanıcı Adınız</label>
+                            <input type="text" asp-for="userName" />
+                           
+                        </div>
+                     
+                        <div class="form-input">
+                            <label>Şifreniz</label>
+                            <input id="Password" type="password" asp-for="password" />
+                     
+                        </div>
+                        <div class="form-input">
+                            <label>Şifre Tekrar</label>
+                            <input type="password" asp-for="confirmPassword" />
+                     
+                        </div>
+                      
+                          <div class="form-group">
+                            <label>Ülkeniz</label>
+
+                            <select id="CountryList" class="form-control" asp-for="countryId" asp-items="@(new SelectList(Model.Countries,"countryId","countryName"))"></select>
+                           
+                        </div>
+                        <button class="btn">Kayıt Ol</button>
+
+                    </form>
+                    <div class="copy-right text-center">
+                        <p>
+                            © @DateTime.Now.Year Tüm hakları saklıdır
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- //login-section -->
+</body>
+
+
+
+</html>

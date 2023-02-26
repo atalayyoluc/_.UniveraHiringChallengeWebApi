@@ -15,6 +15,7 @@ namespace _.UniveraHiringChallengeEntity.Entities
         public string UserFirstName { get; set; }
         public string UserLastName { get; set; }
         public string Password { get; set; }
+        public string? UserToken { get; set; }
         public Guid CountryId { get; set; }
         public Country Country { get; set; }
         public List<UserRole> UserRoles { get; set; }

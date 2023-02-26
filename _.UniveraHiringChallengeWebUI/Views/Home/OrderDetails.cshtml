@@ -1,0 +1,64 @@
+﻿@using _.UniveraHiringChallengeWebUI.Areas.Admin.Models;
+@model List<ProductViewModel>
+
+
+<div class="card">
+    <h5 class="card-header">Sepet Detayları</h5>
+    <div class="table-responsive text-nowrap m-2">
+
+
+
+        <a asp-controller="Home" asp-action="Shopping" class="btn btn-success mb-2">
+            ALışveriş Listesi Oluştur<i class="bx bx-plus"></i>
+        </a>
+
+
+
+
+        <table class="table table-bordered" id="articlesTable" width="100%" collspacing="0">
+            <thead>
+                <tr>
+                    <th>Ürün Adı</th>
+                    <th>Ürün Açıklaması</th>
+                    <th>Ürün Görseli</th>
+
+                    <th>İşlemler</th>
+
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>KategoriAdı</th>
+
+
+                    <th>İşlemler</th>
+
+                </tr>
+            </tfoot>
+            <tbody class="table-border-bottom-0">
+                @foreach (var item in Model)
+                {
+                    <tr name="@item.productId">
+
+                        <td>@item.productName</td>
+                        <td>@item.productDescription</td>
+                        <td><img src="@item.productImgUrl" style="height:20px;width:20px;" /></td>
+
+                        <td>
+                            <a asp-action="Delete" asp-controller="Home" asp-route-productId="@item.productId" asp-route-shoppingId="@ViewBag.shoppingId">Ürün Sil</a>
+                        </td>
+
+
+
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/js/productIndex.js"></script>
+          }
+

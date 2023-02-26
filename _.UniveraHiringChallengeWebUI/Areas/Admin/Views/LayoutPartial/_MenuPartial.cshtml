@@ -1,0 +1,67 @@
+﻿<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+
+
+    <div class="app-brand demo ">
+        <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="menu-link">
+            <i style="font-size:50px" class='bx bxs-tachometer'></i>
+            <div data-i18n="Analytics">Admin Paneli</div>
+        </a>
+
+        <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+            <i class="bx bx-chevron-left bx-sm align-middle"></i>
+        </a>
+    </div>
+
+    <div class="menu-inner-shadow"></div>
+
+
+
+    <ul class="menu-inner py-1">
+
+        <!-- Dashboard -->
+        <li class="menu-item">
+            <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="menu-link">
+                <i class='menu-icon bx bxs-home-smile'></i>
+                <div data-i18n="Analytics">Gösterge Paneli</div>
+            </a>
+        </li>
+
+
+
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">SAYFA YÖNETİMİ</span>
+        </li>
+        <li class="menu-item">
+            <a asp-area="Admin" asp-controller="Product" asp-action="Index" class="menu-link">
+                <i class='menu-icon bx bx-paperclip'></i>
+                <div data-i18n="Analytics">Ürün Yönetimi</div>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a asp-area="Admin" asp-controller="Category" asp-action="Index" class="menu-link">
+                <i class='menu-icon bx bxs-category-alt'></i>
+                <div data-i18n="Analytics">Kategori Yönetimi</div>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a asp-area="Admin" asp-controller="Shopping" asp-action="Index" class="menu-link">
+                <i class='menu-icon bx bx-capsule'></i>
+                <div data-i18n="Analytics">Sepet Yönetimi </div>
+            </a>
+        </li>
+
+
+
+    
+
+
+
+        <!-- Forms & Tables -->
+
+        <!-- Misc -->
+
+
+      
+    </ul>
+
+</aside>

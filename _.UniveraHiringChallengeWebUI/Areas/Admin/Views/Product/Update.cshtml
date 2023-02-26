@@ -1,0 +1,61 @@
+﻿@model UpdateProductViewModel
+<div class="container-xxl flex-grow-1 container-p-y">
+
+
+    <h4 class="fw-bold py-3 mb-4">
+        <span class="text-muted fw-light">Ürün Yönetimi /</span> Ürün Ekle
+    </h4>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mb-4">
+            <h5 class="card-header"></h5>
+            <form asp-controller="Product" asp-action="Update" method="post" enctype="multipart/form-data">
+
+                <div class="card-body">
+                    <input type="hidden"asp-for="productId" value="@Model.productId" />
+                   
+                        
+                    <div class="form-group">
+                        <label asp-for="category1Id">Kategori</label>
+                        <a class="btn text-danger float-end" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+                            Ekle<i class="bx bx-plus"></i>
+                        </a>
+                        <select id="CategoryList" class="form-control" value="@Model.category1Id" asp-for="category1Id" asp-items="@(new SelectList(Model.Categories,"categoryId","categoryName"))" ></select>
+
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="category2Id">Kategori</label>
+                        <a class="btn text-danger float-end" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+                            Ekle<i class="bx bx-plus"></i>
+                        </a>
+                        <select id="CategoryList" class="form-control" asp-for="category2Id" value="@Model.category2Id" asp-items="@(new SelectList(Model.Categories,"categoryId","categoryName"))"></select>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="productName" class="form-label">Ürün Adı</label>
+                        <input asp-for="productName" type="text" class="form-control" id="defaultFormControlInput" placeholder="Lütfen Başlık Giriniz" aria-describedby="defaultFormControlHelp" value="@Model.productName">
+
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="productDescription" class="form-label">Ürün Detayları</label>
+                        <input asp-for="productDescription" type="text" class="form-control" id="defaultFormControlInput" placeholder="Lütfen Makalenizi Giriniz" aria-describedby="defaultFormControlHelp" value="@Model.productDescription">
+
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="productImgUrl" class="form-label">Ürün Resim Url</label>
+                        <input asp-for="productImgUrl" type="text" class="form-control" id="defaultFormControlInput" aria-describedby="defaultFormControlHelp" value="@Model.productImgUrl">
+
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block">Kaydet</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+

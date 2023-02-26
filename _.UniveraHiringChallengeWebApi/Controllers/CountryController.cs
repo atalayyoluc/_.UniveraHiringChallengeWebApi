@@ -7,7 +7,7 @@ namespace _.UniveraHiringChallengeWebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "Admin")]
+    [AllowAnonymous]
     public class CountryController : ControllerBase
     {
         private readonly ICountryService countryService;

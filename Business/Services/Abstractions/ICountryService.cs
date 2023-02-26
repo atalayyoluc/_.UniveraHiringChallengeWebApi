@@ -13,5 +13,6 @@ namespace _.UniveraHiringChallengeBusines.Services.Abstractions
     {
         Task AddCountry(CountryDTO country);
         Task<List<Country>> ListCountry();
+        Task<Country> GetCountry(Guid CountryId);
     }
 }

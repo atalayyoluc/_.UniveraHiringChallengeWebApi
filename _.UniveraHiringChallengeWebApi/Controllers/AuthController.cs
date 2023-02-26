@@ -23,25 +23,29 @@ namespace _.UniveraHiringChallengeWebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(string mail,string password,string roles)
+        
+        public async Task<IActionResult> Login([FromBody]UserLoginDTO userLoginDTO)
         {
-           
-            string userToken = await userService.Login(mail,password);
-            if(userToken!= "Giriş Bilgileri Hatalı")
-            {
-                return Ok(userToken);
-            }
-            else
-            {
-                return BadRequest("Giriş Bilgileri Hatalı");
-            }
-        }
-        [HttpPost("Register")]
-        public async Task<IActionResult> Register(UserDTO user)
-        {
-            await userService.Register(user);
+            
 
-            return Ok();
+                var userToken = await userService.Login(userLoginDTO);
+                if (userToken!=null)
+                {
+                
+                    return Ok(userToken);
+                }
+                else
+                {
+                    return BadRequest();
+                }
+            
         }
-    }
-}
+            [HttpPost("Register")]
+            public async Task<IActionResult> Register(UserDTO userDTO)
+            {
+                var user=await userService.Register(userDTO);
+
+                return Ok(user);
+            }
+        
+    } }

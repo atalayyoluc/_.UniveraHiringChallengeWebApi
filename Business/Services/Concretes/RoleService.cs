@@ -18,7 +18,7 @@ namespace _.UniveraHiringChallengeBusines.Services.Concretes
             this.unitOfWork = unitOfWork;
         }
 
-        public async Task AddRoleByUser(Guid userID)
+        public async Task<Guid> AddRoleByUser(Guid userID)
         {
             UserRole userRole = new UserRole()
             {
@@ -27,6 +27,7 @@ namespace _.UniveraHiringChallengeBusines.Services.Concretes
             };
 
              await unitOfWork.GetRepository<UserRole>().AddAsync(userRole);
+            return userRole.RoleId;
         }
 
         public async Task<string> GetRoleByUser(User user)

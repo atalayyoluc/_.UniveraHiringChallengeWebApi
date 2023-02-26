@@ -1,0 +1,64 @@
+﻿@model List<ShoppingListViewModel>
+
+<div class="card">
+    <h5 class="card-header">Tamamlanmış Alışveriş Listelerim</h5>
+    <div class="table-responsive text-nowrap m-2">
+
+
+
+        <a asp-controller="Home" asp-action="Shopping" class="btn btn-success mb-2">
+            ALışveriş Listesi Oluştur<i class="bx bx-plus"></i>
+        </a>
+
+
+
+
+        <table class="table table-bordered" id="articlesTable" width="100%" collspacing="0">
+            <thead>
+                <tr>
+                    <th>Liste Adı</th>
+                    <th>Liste Açıklaması</th>
+                    <th>Liste Oluşturma Tarihi</th>
+                    <th>Alışveriş Bitiş Tarihi</th>
+
+                    <th>İşlemler</th>
+
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>KategoriAdı</th>
+
+
+                    <th>İşlemler</th>
+
+                </tr>
+            </tfoot>
+            <tbody class="table-border-bottom-0">
+                @foreach (var item in Model)
+                {
+                    <tr name="@item.shoppingId">
+
+                        <td>@item.shoppingName</td>
+                        <td>@item.shoppingDescription</td>
+                        <td>@item.shoppingDate.ToString("D")</td>
+                        @if(item.complatedDate!=null){
+                            <td>@item.complatedDate.Value.ToLongDateString() @item.complatedDate.Value.ToShortTimeString()</td>
+                        }
+
+
+                        <td>
+                          
+                        </td>
+
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/js/productIndex.js"></script>
+          }

@@ -10,7 +10,7 @@ namespace _.UniveraHiringChallengeBusines.Services.Abstractions
 {
     public interface IUserService
     {
-        Task Register(UserDTO user);
-        Task<string> Login(string userName,string password);
+        Task<RegisterDTO> Register(UserDTO user);
+        Task<UserTokenDTO> Login(UserLoginDTO user);
     }
 }

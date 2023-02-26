@@ -58,7 +58,7 @@ namespace _.UniveraHiringChallengeData.Migrations
 
             modelBuilder.Entity("_.UniveraHiringChallengeEntity.Entities.Product", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("ProductId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -70,10 +70,11 @@ namespace _.UniveraHiringChallengeData.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ProductName")
-                        .HasColumnType("int");
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("ProductId");
 
                     b.ToTable("Products");
                 });
@@ -126,9 +127,6 @@ namespace _.UniveraHiringChallengeData.Migrations
                     b.Property<bool>("IsShoppingComplate")
                         .HasColumnType("bit");
 
-                    b.Property<Guid?>("ProductId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime>("ShoppingDate")
                         .HasColumnType("datetime2");
 
@@ -145,11 +143,26 @@ namespace _.UniveraHiringChallengeData.Migrations
 
                     b.HasKey("ShoppingId");
 
-                    b.HasIndex("ProductId");
-
                     b.HasIndex("UserId");
 
                     b.ToTable("ShoppingLists");
+                });
+
+            modelBuilder.Entity("_.UniveraHiringChallengeEntity.Entities.ShoppingListProduct", b =>
+                {
+                    b.Property<Guid>("ShoppingListId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("ShoppingListId");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("ProductId");
+
+                    b.HasKey("ShoppingListId", "ProductId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ShoppingListProduct");
                 });
 
             modelBuilder.Entity("_.UniveraHiringChallengeEntity.Entities.User", b =>
@@ -175,6 +188,9 @@ namespace _.UniveraHiringChallengeData.Migrations
 
                     b.Property<string>("UserName")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserToken")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UserId");
@@ -226,10 +242,6 @@ namespace _.UniveraHiringChallengeData.Migrations
 
             modelBuilder.Entity("_.UniveraHiringChallengeEntity.Entities.ShoppingList", b =>
                 {
-                    b.HasOne("_.UniveraHiringChallengeEntity.Entities.Product", null)
-                        .WithMany("ShoppingLists")
-                        .HasForeignKey("ProductId");
-
                     b.HasOne("_.UniveraHiringChallengeEntity.Entities.User", "User")
                         .WithMany("ShoppingLists")
                         .HasForeignKey("UserId")
@@ -237,6 +249,25 @@ namespace _.UniveraHiringChallengeData.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("_.UniveraHiringChallengeEntity.Entities.ShoppingListProduct", b =>
+                {
+                    b.HasOne("_.UniveraHiringChallengeEntity.Entities.Product", "Product")
+                        .WithMany("ShoppingListProducts")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("_.UniveraHiringChallengeEntity.Entities.ShoppingList", "ShoppingList")
+                        .WithMany("ShoppingListProducts")
+                        .HasForeignKey("ShoppingListId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("ShoppingList");
                 });
 
             modelBuilder.Entity("_.UniveraHiringChallengeEntity.Entities.User", b =>
@@ -283,12 +314,17 @@ namespace _.UniveraHiringChallengeData.Migrations
                 {
                     b.Navigation("ProductCategory");
 
-                    b.Navigation("ShoppingLists");
+                    b.Navigation("ShoppingListProducts");
                 });
 
             modelBuilder.Entity("_.UniveraHiringChallengeEntity.Entities.Role", b =>
                 {
                     b.Navigation("UserRoles");
+                });
+
+            modelBuilder.Entity("_.UniveraHiringChallengeEntity.Entities.ShoppingList", b =>
+                {
+                    b.Navigation("ShoppingListProducts");
                 });
 
             modelBuilder.Entity("_.UniveraHiringChallengeEntity.Entities.User", b =>

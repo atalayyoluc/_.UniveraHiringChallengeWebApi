@@ -36,5 +36,10 @@ namespace _.UniveraHiringChallengeBusines.Services.Concretes
             var country = await unitOfWork.GetRepository<Country>().GetAllAsync();
             return country;
         }
+        public async Task<Country> GetCountry(Guid CountryId)
+        {
+            var country = await unitOfWork.GetRepository<Country>().GetByGuidAsync(CountryId);
+            return country;
+        }
     }
 }

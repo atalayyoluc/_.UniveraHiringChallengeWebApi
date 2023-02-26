@@ -1,0 +1,34 @@
+﻿@using _.UniveraHiringChallengeWebUI.Areas.Admin.Models;
+@model AddProductForShoppingListViewModel
+
+@foreach (var item in ViewBag.category)
+{
+    <a asp-action="AddProductToList" asp-controller="Home" asp-route-shoppingId="@TempData["shoppingId"]" asp-route-categoryId="@item.categoryId"> @item.categoryName</a>
+}
+
+<div class="container ">
+  <div class="row">
+        @foreach (var item in ViewBag.product)
+        {
+            
+           
+            <form class="card col-sm-3 mx-auto mt-3" style="width:18rem;" method="post" asp-action="AddProductToList" asp-controller="Home">
+
+                <input type="hidden" value="@TempData["shoppingId"]" asp-for="shoppingListId" />
+                <input type="hidden" value="@item.productId" asp-for="productId" />
+                <img class="card-img-top" src="@item.productImgUrl" alt="Card image cap" style="width:auto; height:150px">
+                <div class="d-flex flex-column card-body">
+
+                    <h5 class="card-title">@item.productName</h5>
+                    <p class="card-text">@item.productDescription</p>
+
+                    <button type="submit">Sepete Ekle</button>
+
+                </div>
+
+    </form>
+
+        }
+        </div>
+</div>
+
