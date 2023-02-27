@@ -1,5 +1,4 @@
 ﻿using _.UniveraHiringChallengeEntity.DTOs;
-using _.UniveraHiringChallengeEntity.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +11,8 @@ namespace _.UniveraHiringChallengeBusines.Services.Abstractions
     {
         Task CreateProduct(CreateProductDTO createProductDTO);
         Task DeleteProduct(Guid productID);
-        Task<List<ListProductDTO>> ListProduct(); 
-        Task UpdateProduct(Guid productId,UpdateProductDTO updateProductDTO);
         Task<ListProductDTO> GetProduct(Guid productID);
+        Task<List<ListProductDTO>> ListProduct();
+        Task UpdateProduct(Guid productId, UpdateProductDTO updateProductDTO);
     }
 }

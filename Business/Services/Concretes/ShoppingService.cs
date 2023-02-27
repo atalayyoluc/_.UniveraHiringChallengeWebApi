@@ -19,6 +19,46 @@ namespace _.UniveraHiringChallengeBusines.Services.Concretes
             this.unitOfWork = unitOfWork;
         }
 
+        public async Task<List<ListAllShopping>> AllActiveShopping()
+        {
+            var shopping = await unitOfWork.GetRepository<ShoppingList>().GetAllAsync(x => x.IsShoppingComplate == false, x => x.User);
+            List<ListAllShopping> allShoppings = new List<ListAllShopping>();
+            foreach (var item in shopping)
+            {
+                allShoppings.Add(new ListAllShopping()
+                {
+                    ShoppingName = item.ShoppingName,
+                    ShoppingDescription = item.ShoppingDescription,
+                    ShoppingDate = item.ShoppingDate,
+                    ShoppingId = item.ShoppingId,
+                    FullName = item.User.UserFirstName + " " + item.User.UserLastName,
+                    ComplatedDate = item.ComplateDate
+                });
+            }
+            return allShoppings;
+        }
+    
+
+        public async Task<List<ListAllShopping>> AllShopping()
+        {
+        var shopping = await unitOfWork.GetRepository<ShoppingList>().GetAllAsync(null,x => x.User);
+        List<ListAllShopping> allShoppings = new List<ListAllShopping>();
+        foreach (var item in shopping)
+        {
+            allShoppings.Add(new ListAllShopping()
+            {
+                ShoppingName = item.ShoppingName,
+                ShoppingDescription = item.ShoppingDescription,
+                ShoppingDate = item.ShoppingDate,
+                ShoppingId = item.ShoppingId,
+                FullName = item.User.UserFirstName + " " + item.User.UserLastName,
+                ComplatedDate = item.ComplateDate
+            });
+        }
+        return allShoppings;
+    }
+
+
         public async Task CreateShopping(AddShoppingDTO shoppingDTO)
         {
             ShoppingList shopping=new ShoppingList()
@@ -77,7 +117,7 @@ namespace _.UniveraHiringChallengeBusines.Services.Concretes
 
         public async Task<List<ListAllShopping>> GetComplatedShoppingByUser(Guid userId)
         {
-            var shopping = await unitOfWork.GetRepository<ShoppingList>().GetAllAsync(x => x.IsShoppingComplate == true, x => x.User);
+            var shopping = await unitOfWork.GetRepository<ShoppingList>().GetAllAsync(x => x.IsShoppingComplate == true&&x.UserId==userId, x => x.User);
             List<ListAllShopping> allShoppings = new List<ListAllShopping>();
             foreach (var item in shopping)
             {

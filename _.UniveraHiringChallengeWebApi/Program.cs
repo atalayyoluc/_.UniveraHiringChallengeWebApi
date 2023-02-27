@@ -1,4 +1,4 @@
-using _.UniveraHiringChallengeBusines.Extensions;
+using _.UniveraHiringChallengeBusines.Services.Extensions;
 using _.UniveraHiringChallengeData.Extentions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;

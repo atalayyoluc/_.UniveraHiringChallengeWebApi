@@ -1,12 +1,14 @@
 ﻿using _.UniveraHiringChallengeWebUI.Entities.Context;
 using _.UniveraHiringChallengeWebUI.Models;
 using _.UniveraHiringChallengeWebUI.UnitOfWork;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
 namespace _.UniveraHiringChallengeWebUI.Areas.Admin.Controllers
 {
         [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class ShoppingController : Controller
     {
         private readonly IUnitOfWork unitOfWork;
@@ -31,5 +33,12 @@ namespace _.UniveraHiringChallengeWebUI.Areas.Admin.Controllers
           var List= await unitOfWork.GetWebConnect<ShoppingListViewModel>().GetListAsync("Shopping/AllComplatedOrder",Token);
             return View(List);
         }
+        public async Task<IActionResult> ActiveShopping()
+        {
+            string Token=UserToken();
+            var List = await unitOfWork.GetWebConnect<ShoppingListViewModel>().GetListAsync("Shopping/AllActiveShopping", Token);
+            return View(List);
+        }
+       
     }
 }

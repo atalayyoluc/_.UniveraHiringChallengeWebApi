@@ -3,12 +3,14 @@ using _.UniveraHiringChallengeWebUI.Areas.Admin.Models;
 using _.UniveraHiringChallengeWebUI.Entities.Context;
 using _.UniveraHiringChallengeWebUI.Models;
 using _.UniveraHiringChallengeWebUI.UnitOfWork;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
 namespace _.UniveraHiringChallengeWebUI.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Area("Admin")]
     public class ProductController : Controller
     {

@@ -8,7 +8,7 @@ using NuGet.Common;
 using Newtonsoft.Json;
 using System.Text;
 
-namespace _.UniveraHiringChallengeWebUI.APIContent
+namespace _.UniveraHiringChallengeWebUI.Repositories
 {
     public class WebConnect<T> : IWebConnect<T> where T : class, new()
     {
@@ -17,32 +17,32 @@ namespace _.UniveraHiringChallengeWebUI.APIContent
         private readonly ClaimsPrincipal user;
 
 
-        public async Task<HttpResponseMessage>Delete(string Url,Guid shoppingId,Guid productId,string Token)
+        public async Task<HttpResponseMessage> Delete(string Url, Guid shoppingId, Guid productId, string Token)
         {
-            var request=new HttpRequestMessage()
+            var request = new HttpRequestMessage()
             {
-                Method=HttpMethod.Delete,
-                RequestUri=new Uri($"{BaseURL}{Url}?shoppingId={shoppingId}&productId={productId}"),
+                Method = HttpMethod.Delete,
+                RequestUri = new Uri($"{BaseURL}{Url}?shoppingId={shoppingId}&productId={productId}"),
                 Headers =
                 {
                     {"Authorization","Bearer"+Token }
                 }
             };
-            using(var response=await client.SendAsync(request))
+            using (var response = await client.SendAsync(request))
             {
                 return response;
             }
         }
-        
-    
-        public async Task<List<T>> GetListAsync(string Url,string Token)
+
+
+        public async Task<List<T>> GetListAsync(string Url, string Token)
         {
-            
-                var request = new HttpRequestMessage()
-                {
-                    Method = HttpMethod.Get,
-                    RequestUri = new Uri(BaseURL + Url),
-                    Headers =
+
+            var request = new HttpRequestMessage()
+            {
+                Method = HttpMethod.Get,
+                RequestUri = new Uri(BaseURL + Url),
+                Headers =
                     {
 
                     {"Authorization" ,"Bearer "+
@@ -50,18 +50,18 @@ namespace _.UniveraHiringChallengeWebUI.APIContent
                     }
 
 
-                };
-                using (var response = await client.SendAsync(request))
-                {
-                    response.EnsureSuccessStatusCode();
-                    var body = response.Content.ReadFromJsonAsync<List<T>>().Result;
-                    return body;
-                }
+            };
+            using (var response = await client.SendAsync(request))
+            {
+                response.EnsureSuccessStatusCode();
+                var body = response.Content.ReadFromJsonAsync<List<T>>().Result;
+                return body;
+            }
 
-            
+
         }
 
-        public async Task<HttpResponseMessage> PostAsync(string Url,T entity, string Token)
+        public async Task<HttpResponseMessage> PostAsync(string Url, T entity, string Token)
         {
             var response = client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Token);
             var json = await client.PostAsJsonAsync(BaseURL + Url, entity);
@@ -73,7 +73,7 @@ namespace _.UniveraHiringChallengeWebUI.APIContent
             var request = new HttpRequestMessage()
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri(BaseURL + Url+"/"+productId),
+                RequestUri = new Uri(BaseURL + Url + "/" + productId),
                 Headers =
                 {
 
@@ -88,13 +88,13 @@ namespace _.UniveraHiringChallengeWebUI.APIContent
             }
         }
 
-        public async Task<List<T>> GetListByUserAsync(string Url, Guid UserId,string Token)
+        public async Task<List<T>> GetListByUserAsync(string Url, Guid UserId, string Token)
         {
 
             var request = new HttpRequestMessage()
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri(BaseURL + Url+"/"+UserId),
+                RequestUri = new Uri(BaseURL + Url + "/" + UserId),
                 Headers =
                 {
 
@@ -111,7 +111,7 @@ namespace _.UniveraHiringChallengeWebUI.APIContent
         }
 
 
-        public async Task<HttpResponseMessage> PutAsync(string Url,Guid shoppingId, string Token)
+        public async Task<HttpResponseMessage> PutAsync(string Url, Guid shoppingId, string Token)
         {
             var request = new HttpRequestMessage()
             {
@@ -127,10 +127,10 @@ namespace _.UniveraHiringChallengeWebUI.APIContent
             using (var response = await client.SendAsync(request))
             {
                 return response;
-              
+
             }
         }
-        public async Task<HttpResponseMessage> PutAsync(string Url,Guid id,string Token,T entity)
+        public async Task<HttpResponseMessage> PutAsync(string Url, Guid id, string Token, T entity)
         {
             var httpcontext = new StringContent(JsonConvert.SerializeObject(entity), Encoding.UTF8, "application/json");
             var request = new HttpRequestMessage()
@@ -150,10 +150,10 @@ namespace _.UniveraHiringChallengeWebUI.APIContent
                 return response;
             }
         }
-        }
-
-
-
     }
+
+
+
+}
 
 

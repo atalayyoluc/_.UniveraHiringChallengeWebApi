@@ -10,12 +10,14 @@ namespace _.UniveraHiringChallengeBusines.Services.Abstractions
 {
     public interface IShoppingService
     {
-        Task<List<ListShoppingDTO>> GetListByUser(Guid userId);
         Task CreateShopping(AddShoppingDTO shoppingDTO);
+        Task<List<ListAllShopping>> GetAllComplatedShopping();
         Task<List<ListAllShopping>> GetAllShopping();
         Task<List<ListAllShopping>> GetComplatedShoppingByUser(Guid userId);
-        Task<List<ListAllShopping>> GetAllComplatedShopping();
-        Task UpdateShopping(Guid shoppingId);
+        Task<List<ListShoppingDTO>> GetListByUser(Guid userId);
         Task<List<Product>> GetProductByShopping(Guid shoppingId);
+        Task UpdateShopping(Guid shoppingId);
+        Task<List<ListAllShopping>> AllShopping();
+        Task<List<ListAllShopping>> AllActiveShopping();
     }
 }

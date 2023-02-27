@@ -1,15 +1,13 @@
-﻿using _.UniveraHiringChallengeWebUI.APIContent;
-using _.UniveraHiringChallengeWebUI.Areas.Admin.Models;
-using _.UniveraHiringChallengeWebUI.Entities.Context;
+﻿using _.UniveraHiringChallengeWebUI.Areas.Admin.Models;
 using _.UniveraHiringChallengeWebUI.UnitOfWork;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
 namespace _.UniveraHiringChallengeWebUI.Areas.Admin.Controllers
 {
     [Area("Admin")]
-
+    [Authorize(Roles = "Admin")]
     public class CategoryController : Controller
     {
         #region Defines

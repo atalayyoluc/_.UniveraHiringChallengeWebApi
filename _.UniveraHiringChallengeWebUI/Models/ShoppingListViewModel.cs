@@ -7,6 +7,8 @@
         public string shoppingDescription { get; set;}
         public DateTime shoppingDate { get; set; }
         public DateTime? complatedDate { get; set; }
-        
+        public bool iscomplated { get; set; }
+        public string fullName { get; set; }
+
     }
 }

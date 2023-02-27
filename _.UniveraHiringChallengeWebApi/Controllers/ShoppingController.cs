@@ -71,6 +71,13 @@ namespace _.UniveraHiringChallengeWebApi.Controllers
             var details=await shoppingService.GetProductByShopping(shoppingId);
             return Ok(details);
         }
+        [HttpGet]
+        [Route("[action]")]
+        public async Task<IActionResult> AllActiveShopping()
+        {
+            var details = await shoppingService.AllActiveShopping();
+            return Ok(details);
+        } 
 
     }
 }

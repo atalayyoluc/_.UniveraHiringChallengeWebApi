@@ -1,5 +1,4 @@
-﻿
-using _.UniveraHiringChallengeEntity.DTOs;
+﻿using _.UniveraHiringChallengeEntity.DTOs;
 using _.UniveraHiringChallengeEntity.Entities;
 using System;
 using System.Collections.Generic;

@@ -1,5 +1,4 @@
 ﻿using _.UniveraHiringChallengeEntity.DTOs;
-using _.UniveraHiringChallengeEntity.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +9,7 @@ namespace _.UniveraHiringChallengeBusines.Services.Abstractions
 {
     public interface IProductForCategoryService
     {
-        Task AddCategoryToProduct(Guid prodcutId,AddCategoryToProductDTO addCategoryToProductDTO);
-        Task<List<CategoryDTO>>  GetCategory(Guid productId);
+        Task AddCategoryToProduct(Guid productId, AddCategoryToProductDTO addCategoryToProductDTO);
+        Task<List<CategoryDTO>> GetCategory(Guid productId);
     }
 }

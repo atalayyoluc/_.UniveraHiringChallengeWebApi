@@ -11,10 +11,10 @@ namespace _.UniveraHiringChallengeBusines.Services.Abstractions
     public interface ICategoryService
     {
         Task AddCategory(CreateCategoryDTO category);
-        Task<List<Category>> GetListCategory();
-        Task UpdateCategory(Guid categoryId,CreateCategoryDTO createCategoryDTO);
         Task DeleteCategory(Guid categoryId);
         Task<Category> GetCategoryByGuid(Guid categoryId);
+        Task<List<Category>> GetListCategory();
         Task<List<Product>> GetProductByCategory(Guid categoryId);
+        Task UpdateCategory(Guid categoryId, CreateCategoryDTO createCategoryDTO);
     }
 }

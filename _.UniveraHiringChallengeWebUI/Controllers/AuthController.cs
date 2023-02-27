@@ -105,10 +105,10 @@ namespace _.UniveraHiringChallengeWebUI.Controllers
           
         }
 
-        public IActionResult Logout()
+        public async Task<IActionResult> Logout()
         {
-
-            return View();
+            await signInManager.SignOutAsync();
+            return RedirectToAction("Login","Auth");
         }
 
     }

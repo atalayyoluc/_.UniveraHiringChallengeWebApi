@@ -1,4 +1,4 @@
-﻿using _.UniveraHiringChallengeWebUI.APIContent;
+﻿using _.UniveraHiringChallengeWebUI.Repositories;
 using _.UniveraHiringChallengeWebUI.UnitOfWork;
 
 namespace _.UniveraHiringChallengeWebUI

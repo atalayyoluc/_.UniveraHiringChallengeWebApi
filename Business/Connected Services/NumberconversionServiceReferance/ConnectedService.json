@@ -1,0 +1,44 @@
+{
+  "ExtendedData": {
+    "inputs": [
+      "https://www.dataaccess.com/webservicesserver/NumberConversion.wso"
+    ],
+    "collectionTypes": [
+      "System.Array",
+      "System.Collections.Generic.Dictionary`2"
+    ],
+    "namespaceMappings": [
+      "*, NumberconversionServiceReferance"
+    ],
+    "references": [
+      "C:\\Users\\Atalay\\Desktop\\Patika.net Univera .Net HiringChallenge\\_.UniveraHiringChallengeWebApi\\Business\\bin\\Debug\\net6.0\\_.UniveraHiringChallengeData.dll",
+      "C:\\Users\\Atalay\\Desktop\\Patika.net Univera .Net HiringChallenge\\_.UniveraHiringChallengeWebApi\\Business\\bin\\Debug\\net6.0\\_.UniveraHiringChallengeEntity.dll",
+      "Microsoft.Data.SqlClient, {Microsoft.Data.SqlClient, 2.1.4}",
+      "Microsoft.EntityFrameworkCore, {Microsoft.EntityFrameworkCore, 6.0.12}",
+      "Microsoft.EntityFrameworkCore.Abstractions, {Microsoft.EntityFrameworkCore.Abstractions, 6.0.12}",
+      "Microsoft.EntityFrameworkCore.Relational, {Microsoft.EntityFrameworkCore.Relational, 6.0.12}",
+      "Microsoft.EntityFrameworkCore.SqlServer, {Microsoft.EntityFrameworkCore.SqlServer, 6.0.12}",
+      "Microsoft.Extensions.Caching.Abstractions, {Microsoft.Extensions.Caching.Abstractions, 6.0.0}",
+      "Microsoft.Extensions.Caching.Memory, {Microsoft.Extensions.Caching.Memory, 6.0.1}",
+      "Microsoft.Extensions.Configuration.Abstractions, {Microsoft.Extensions.Configuration.Abstractions, 6.0.0}",
+      "Microsoft.Extensions.DependencyInjection, {Microsoft.Extensions.DependencyInjection, 6.0.1}",
+      "Microsoft.Extensions.DependencyInjection.Abstractions, {Microsoft.Extensions.DependencyInjection.Abstractions, 6.0.0}",
+      "Microsoft.Extensions.Logging, {Microsoft.Extensions.Logging, 6.0.0}",
+      "Microsoft.Extensions.Logging.Abstractions, {Microsoft.Extensions.Logging.Abstractions, 6.0.0}",
+      "Microsoft.Extensions.Options, {Microsoft.Extensions.Options, 6.0.0}",
+      "Microsoft.Extensions.Primitives, {Microsoft.Extensions.Primitives, 6.0.0}",
+      "Microsoft.IdentityModel.JsonWebTokens, {Microsoft.IdentityModel.JsonWebTokens, 6.8.0}",
+      "Microsoft.IdentityModel.Logging, {Microsoft.IdentityModel.Logging, 6.8.0}",
+      "Microsoft.IdentityModel.Protocols, {Microsoft.IdentityModel.Protocols, 6.8.0}",
+      "Microsoft.IdentityModel.Protocols.OpenIdConnect, {Microsoft.IdentityModel.Protocols.OpenIdConnect, 6.8.0}",
+      "Microsoft.IdentityModel.Tokens, {Microsoft.IdentityModel.Tokens, 6.8.0}",
+      "System.Collections.Immutable, {System.Collections.Immutable, 6.0.0}",
+      "System.Diagnostics.DiagnosticSource, {System.Diagnostics.DiagnosticSource, 6.0.0}",
+      "System.IdentityModel.Tokens.Jwt, {System.IdentityModel.Tokens.Jwt, 6.8.0}",
+      "System.Runtime.CompilerServices.Unsafe, {System.Runtime.CompilerServices.Unsafe, 6.0.0}",
+      "System.Security.Cryptography.Cng, {System.Security.Cryptography.Cng, 4.5.0}"
+    ],
+    "targetFramework": "net6.0",
+    "typeReuseMode": "All"
+  }
+}
